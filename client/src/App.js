@@ -6,8 +6,6 @@ import {
   ApolloProvider,
   createHttpLink,
 } from '@apollo/client';
-// go
-import { setContext } from '@apollo/client/link/context';
 
 import Home from './pages/Home';
 import Detail from './pages/Detail';
@@ -15,30 +13,16 @@ import NoMatch from './pages/NoMatch';
 import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
-// go
-// deleted, initial state moved to reducer
-// import { StoreProvider } from './utils/GlobalState';
-// new import
 import StoreProvider from './utils/StoreRedux';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
+// Auth middleware
+import authLink from './common/api';
 
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
 
-// go
-const authLink = setContext((_, { headers }) => {
-  const token = localStorage.getItem('id_token');
-  return {
-    headers: {
-      ...headers,
-      authorization: token ? `Bearer ${token}` : '',
-    },
-  };
-});
-
-// change
 const client = new ApolloClient({
   link: authLink.concat(httpLink),
   cache: new InMemoryCache(),
@@ -49,7 +33,6 @@ function App() {
     <ApolloProvider client={client}>
       <Router>
         <div>
-          {/* go */}
           <StoreProvider>
             <Nav />
             <Switch>
