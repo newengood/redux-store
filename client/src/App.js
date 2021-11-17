@@ -16,7 +16,10 @@ import Login from './pages/Login';
 import Signup from './pages/Signup';
 import Nav from './components/Nav';
 // go
-import { StoreProvider } from './utils/GlobalState';
+// deleted, initial state moved to reducer
+// import { StoreProvider } from './utils/GlobalState';
+// new import
+import StoreProvider from './utils/StoreRedux';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
 
