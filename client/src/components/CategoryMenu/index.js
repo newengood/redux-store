@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useQuery } from '@apollo/client';
-import { useProductReducer } from '../../utils/reducers';
+import { useDispatch, useSelector } from 'react-redux';
 // import { useStoreContext } from '../../utils/GlobalState';
 import {
   UPDATE_CATEGORIES,
@@ -10,7 +10,8 @@ import { QUERY_CATEGORIES } from '../../utils/queries';
 import { idbPromise } from '../../utils/helpers';
 
 function CategoryMenu() {
-  const [state, dispatch] = useProductReducer();
+  const dispatch = useDispatch();
+  const state = useSelector((state) => state);
 
   const { categories } = state;
 

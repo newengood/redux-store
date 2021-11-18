@@ -16,17 +16,31 @@ import Nav from './components/Nav';
 import StoreProvider from './utils/StoreRedux';
 import Success from './pages/Success';
 import OrderHistory from './pages/OrderHistory';
-// Auth middleware
-import authLink from './common/api';
+import store from './utils/store';
+// Inject store for authorization
+import {injectStore} from "./utils/StoreRedux"
+injectStore(store);
 
 const httpLink = createHttpLink({
   uri: '/graphql',
 });
 
-const client = new ApolloClient({
-  link: authLink.concat(httpLink),
-  cache: new InMemoryCache(),
-});
+// Needs debugging here.
+// see https://michaelwashburnjr.com/blog/best-way-to-store-tokens-redux
+// const authLink = store.subscribe(({ headers }) => {
+//   const token = localStorage.getItem('id_token');
+//   return {
+//     headers: {
+//       ...headers,
+//       authorization: token ? `Bearer ${token}` : '',
+//     },
+//   };
+// });
+
+// const client = new ApolloClient({
+//   link: authLink.concat(httpLink),
+//   cache: new InMemoryCache(),
+// });
 
 function App() {
   return (

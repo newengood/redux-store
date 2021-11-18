@@ -3,7 +3,7 @@ import { createStore } from 'redux';
 
 // Import new reducer file
 // If errors, try importing reducer function directly
-import { useProductReducer } from './reducers';
+import reducers from './reducers';
 
 
-export default createStore(useProductReducer);
+export default createStore(reducers);
