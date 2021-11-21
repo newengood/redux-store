@@ -37,7 +37,5 @@
 Contact information for questions:
 
 * Email: 04-scones.card@newengood.com
-* Github: https://github.com/newengood
-  
-  
+* Github: https://github.com/newengood/
 
