@@ -12,7 +12,7 @@
   
 ## Description
 
-*  This application refactors an existing E-Commerce application built on React's Context API into one leveraging Redux for global state management. 
+*  This application refactors an existing E-Commerce application built on React's Context API into one leveraging Redux for global state management.
 
 ## Usage
 
@@ -40,3 +40,4 @@ Contact information for questions:
 * Github: https://github.com/newengood
   
   
+
