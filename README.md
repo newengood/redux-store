@@ -12,13 +12,13 @@
   
 ## Description
 
-*  An app that accepts exercise information and displays statistics of the workouts.
+*  This application refactors an existing E-Commerce application built on React's Context API into one leveraging Redux for global state management. 
 
 ## Usage
 
 ![usage](./assets/usage.png)
 
-[Deployment](https://radiant-inlet-63148.herokuapp.com/)
+[Deployment](https://stormy-castle-33926.herokuapp.com/)
 
 ## License
   
